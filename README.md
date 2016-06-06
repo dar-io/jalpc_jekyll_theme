@@ -10,7 +10,7 @@ It's pretty minimal, but leverages large type and drastic contrast to make a sta
 
 The landing page of the blog is bilingual page.
 
-Jekyll theme.
+If you like this Jekyll theme,please give me encouragement and star this project,I will make it better.
 
 ## Getting Started
 
