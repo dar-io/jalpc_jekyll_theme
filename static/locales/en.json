@@ -6,6 +6,7 @@
     "home": "Home",
     "about_me": "About",
     "skills": "Skills",
+    "projects": "Projects",
     "career": "Career",
     "blog": "Blog",
     "contact": "Contact"
@@ -16,6 +17,11 @@
   },
   "skills":{
     "my_skills": "My Skills"
+  },
+  "projects":{
+    "my_projects": "My Projects",
+    "saplatform": "Saplatform is a automated service for ops,it has asset management, project release,database access function.",
+    "jalpc": "Jalpc is a simple, beautiful and swift theme for Jekyll.It's pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices."
   },
   "career":{
     "my_career": "My Career",
