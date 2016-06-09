@@ -6,7 +6,7 @@ desc: "install Raspbian to micro-sd on mac and config WiFi"
 keywords: "mac,install,raspbian,micro-sd,wifi"
 categories: [Linux]
 tags: [Raspbian]
-icon: icon-debian
+icon: icon-raspberrypi
 ---
 
 ## 1、安装
