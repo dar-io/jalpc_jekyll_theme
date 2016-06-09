@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Mac下给SD卡安装 Raspbian 系统"
+title:  "Mac下给SD卡安装Raspbian系统并配置WiFi"
 date:   2016-06-09
-desc: "install Raspbian to micro-sd on mac"
-keywords: "mac,install,raspbian,micro-sd"
+desc: "install Raspbian to micro-sd on mac and config WiFi"
+keywords: "mac,install,raspbian,micro-sd,wifi"
 categories: [Life]
 tags: [Raspbian]
 icon: icon-debian
@@ -53,4 +53,55 @@ $ dd bs=4m if=pi.img of=/dev/rdisk2
 781+1 records in
 781+1 records out
 3276800000 bytes transferred in 194.134151 secs (16879050 bytes/sec)
+```
+## 2、配置WiFi
+
+树莓派自带WiFi，在启动系统之后，我们可以通过`ip a`命令看到wlan0网卡，下面是修改`/etc/network/interfaces.d`配置文件：
+
+```
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+iface eth0 inet manual
+
+allow-hotplug wlan0
+
+iface wlan0 inet dhcp
+wpa-ssid WiFi-ssid
+wpa-psk WiFi-password
+iface default inet dhcp
+
+allow-hotplug wlan1
+iface wlan1 inet manual
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+重启`init 6`即可。
+
+```
+pi@raspberrypi:~ $ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether b8:27:eb:ca:9c:86 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::d72f:7f67:bf11:ec0f/64 scope link tentative
+       valid_lft forever preferred_lft forever
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether b8:27:eb:9f:c9:d3 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.14/24 brd 192.168.1.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::c52e:80ca:79e2:ebb5/64 scope link
+       valid_lft forever preferred_lft forever
 ```
