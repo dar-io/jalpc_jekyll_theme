@@ -4,7 +4,7 @@ title:  "Mac下给SD卡安装Raspbian系统并配置WiFi"
 date:   2016-06-09
 desc: "install Raspbian to micro-sd on mac and config WiFi"
 keywords: "mac,install,raspbian,micro-sd,wifi"
-categories: [Life]
+categories: [Linux]
 tags: [Raspbian]
 icon: icon-debian
 ---
@@ -116,7 +116,7 @@ iface wlan1 inet manual
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
-重启`init 6`即可。
+重启`init 6`即可（需要root权限）。
 
 ```
 pi@raspberrypi:~ $ ip a
