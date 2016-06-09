@@ -54,6 +54,16 @@ $ dd bs=4m if=pi.img of=/dev/rdisk2
 781+1 records out
 3276800000 bytes transferred in 194.134151 secs (16879050 bytes/sec)
 ```
+
+至此，SD卡上已经刷入了 Raspbian 系统
+
+再用diskutil unmountDisk卸载设备
+
+```
+$ diskutil unmountDisk /dev/disk2
+Unmount of all volumes on disk2 was successful
+```
+
 ## 2、配置WiFi
 
 树莓派自带WiFi，在启动系统之后，我们可以通过`ip a`命令看到wlan0网卡，下面是修改`/etc/network/interfaces.d`配置文件：
