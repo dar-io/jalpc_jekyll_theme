@@ -84,6 +84,38 @@ iface wlan1 inet manual
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
+也可以配成静态网络
+
+```
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+iface eth0 inet manual
+
+allow-hotplug wlan0
+
+iface wlan0 inet static
+wpa-ssid WiFi-ssid        # 需要连接的WiFi名
+wpa-psk WiFi-password     # WiFi密码
+address 192.168.1.110     # 设定的静态IP地址
+netmask 255.255.255.0     # 网络掩码
+gateway 192.168.1.1      # 网关
+network 192.168.1.1      # 网络地址
+iface default inet dhcp
+
+allow-hotplug wlan1
+iface wlan1 inet manual
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
 重启`init 6`即可。
 
 ```
