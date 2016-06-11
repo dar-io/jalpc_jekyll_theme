@@ -32,7 +32,7 @@ $ rm -rf _site && jekyll server
 
 The _config.yml located in the root of the jalpc_jekyll_theme directory contains all of the configuration details for the Jekyll site. The defaults are:
 
-```
+``` yml
 # Welcome to Jekyll!
 
 # Site settings
@@ -105,7 +105,7 @@ In addition to your github-username.github.io repo that maps to the root url, yo
 
 This will require you to modify the _config.yml like so:
 
-```
+``` yml
 # Welcome to Jekyll!
 
 # Site settings
@@ -166,7 +166,7 @@ To add i18 support for your app you need to define what text you would like to t
 
 en.json
 
-```
+``` json
 {
   "website":{
     "title": "Jalpc"
@@ -184,7 +184,7 @@ en.json
 
 cn.json
 
-```
+``` json
 {
   "website":{
     "title": "杰克的博客"
