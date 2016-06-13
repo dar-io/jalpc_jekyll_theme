@@ -1,7 +1,9 @@
 # Welcome to Jekyll!
 
-# Site settings
+# Website settings
 title: "Jalpc"
+description: "Jack's blog,use Jekyll and github pages."
+keywords: "Jack,Jalpc,blog,Jekyll,github,gh-pages"
 
 baseurl: "/"
 url: "http://www.jack003.com"
