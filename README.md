@@ -16,17 +16,16 @@ If you like this Jekyll theme,please give me encouragement and star this project
 
 If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by Smashing Magazine.
 
-```
-$ git clone https://github.com/Jack614/jalpc_jekyll_theme.git
-$ cd jalpc_jekyll_theme
-$ gem install jekyll # If you don't have jekyll installed
-$ rm -rf _site && jekyll server
-```
-
 #### Fork, then clone
 
 **Fork** the repo, and then **clone** it so you've got the code locally.
 
+```
+$ git clone https://github.com/<your githubname>/jalpc_jekyll_theme.git
+$ cd jalpc_jekyll_theme
+$ gem install jekyll # If you don't have jekyll installed
+$ rm -rf _site && jekyll server
+```
 
 ### Modify the _config.yml
 
