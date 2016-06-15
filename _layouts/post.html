@@ -30,7 +30,14 @@ layout: default
                         <div class="col-md-6">
                             <div class="small text-right">
                                 <h5>Stats:</h5>
-                                <div> <i class="fa fa-comments-o"> </i> <span id = "url::{{page.url | prepend: site.url}}" class = "cy_cmt_count" ></span> comments</div>
+                                <div> 
+                                {% if site.changyan %}
+                                    <i class="fa fa-comments-o"> </i> <span id = "url::{{post.url | prepend: page.url}}" class = "cy_cmt_count" ></span> comments
+                                {% endif %}
+                                {% if site.disqus %}
+                                <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ page.url }}"></span> comments
+                                {% endif %}
+                                </div>
                             </div>
                         </div>
                     </div>
