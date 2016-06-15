@@ -1,5 +1,18 @@
+{% if site.disqus %}
+<script type="text/javascript">
+    var disqus_shortname = '{{ site.disqus.name }}';
 
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+{% endif %}
+{% if site.changyan %}
 <script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysfY7ULn"></script>
+{% endif %}
 <script>
 
     $(document).ready(function () {
@@ -53,15 +66,4 @@
     // Activate WOW.js plugin for animation on scrol
     new WOW().init();
 
-</script>
-
-<script type="text/javascript">
-    var disqus_shortname = '{{ site.disqus.name }}';
-
-    (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
 </script>
