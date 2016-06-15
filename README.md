@@ -262,7 +262,13 @@ I use [Baidu analytics](http://tongji.baidu.com/web/welcome/login) and [Google a
 
 ### Comment
 
-I use Changyan to realize comment,to configure Changyan, get the appid and conf in <http://changyan.kuaizhan.com/>. Then, in `_config.yml`, edit the changyan value to enable Changyan.
+I use [Changyan](http://changyan.kuaizhan.com/) and [Disqus](https://disqus.com/) to realize comment. 
+
+#### Changyan
+To configure Changyan, get the appid and conf in <http://changyan.kuaizhan.com/>. Then, in `_config.yml`, edit the changyan value to enable Changyan.
+
+#### Disqus
+To configure Disqus,you should set disqus_shortname and get public key and then, in `_config.yml`, edit the disqus value to enable Disqus.
 
 ### Share
 
